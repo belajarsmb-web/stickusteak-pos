@@ -1,0 +1,333 @@
+/* Mobile Order - Clean Responsive CSS */
+/* Fix overlapping & improve mobile layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #1a1a2e;
+    color: #fff;
+    padding-bottom: 70px;
+    overflow-x: hidden;
+}
+
+/* Header - Compact & Clean */
+.header {
+    background: linear-gradient(135deg, #16213e, #1a1a2e);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #e94560;
+}
+
+.header h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e94560;
+    margin-bottom: 4px;
+}
+
+.header small {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+/* Category Nav - No Overlapping */
+.category-nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 12px 15px;
+    background: #16213e;
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav button {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #e94560;
+    background: transparent;
+    color: #fff;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.category-nav button.active {
+    background: #e94560;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Menu Grid - Responsive, No Overlapping */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.menu-card {
+    background: #16213e;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(233, 69, 96, 0.2);
+    transition: transform 0.3s;
+}
+
+.menu-card:active {
+    transform: scale(0.98);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background: #222;
+}
+
+.menu-card-body {
+    padding: 12px;
+}
+
+.menu-card h6 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e94560;
+    margin-bottom: 6px;
+}
+
+.menu-card p {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu-card .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e94560;
+    margin-bottom: 10px;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 10px;
+    background: #e94560;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-add:active {
+    opacity: 0.8;
+}
+
+/* Cart Bar */
+.cart-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #16213e;
+    padding: 15px;
+    border-top: 2px solid #e94560;
+    display: none;
+    z-index: 1000;
+}
+
+.cart-bar.show {
+    display: block;
+}
+
+.cart-info {
+    margin-bottom: 10px;
+}
+
+.cart-info small {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.cart-info .total {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e94560;
+}
+
+.btn-view {
+    width: 100%;
+    padding: 12px;
+    background: #e94560;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-view:active {
+    opacity: 0.8;
+}
+
+/* Modal - Responsive */
+.modal-content {
+    background: #1a1a2e;
+    color: #fff;
+    border: 2px solid #e94560;
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(233, 69, 96, 0.3);
+    padding: 15px;
+}
+
+.modal-title {
+    color: #e94560;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(233, 69, 96, 0.3);
+    padding: 15px;
+}
+
+.form-control, .form-select {
+    background: #16213e;
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: #1f294a;
+    border-color: #e94560;
+    color: #fff;
+}
+
+.form-label {
+    color: #e94560;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Cart Items in Modal */
+.cart-item {
+    background: #16213e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+.cart-item-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e94560;
+    margin-bottom: 4px;
+}
+
+.cart-item-price {
+    font-size: 11px;
+    color: #888;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #e94560;
+    background: transparent;
+    color: #e94560;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:active {
+    background: #e94560;
+    color: #fff;
+}
+
+.qty-display {
+    font-weight: 700;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Small screens (< 360px) */
+@media (max-width: 360px) {
+    .header h5 { font-size: 14px; }
+    .header small { font-size: 11px; }
+    .category-nav button { padding: 6px 14px; font-size: 12px; }
+    .menu-card img { height: 130px; }
+    .menu-card h6 { font-size: 13px; }
+    .menu-card .price { font-size: 14px; }
+    .btn-add { font-size: 12px; padding: 8px; }
+}
+
+/* Tablet/Desktop (≥ 768px) */
+@media (min-width: 768px) {
+    .menu-grid {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .header { padding: 20px; }
+    .header h5 { font-size: 18px; }
+    .category-nav { justify-content: center; }
+}

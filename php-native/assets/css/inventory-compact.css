@@ -1,0 +1,73 @@
+/* Inventory Management - Compact Layout */
+
+.inventory-table-container {
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+}
+
+.inventory-table tbody tr {
+    font-size: 0.9rem;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 12px 15px;
+}
+
+.stat-card {
+    padding: 20px;
+}
+
+.stat-card-value {
+    font-size: 2rem;
+}
+
+.filters-bar {
+    flex-wrap: wrap;
+}
+
+.search-input {
+    min-width: 250px;
+}
+
+/* Custom scrollbar */
+.inventory-table-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.inventory-table-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.inventory-table-container::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 4px;
+}
+
+.inventory-table-container::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-primary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+    }
+    
+    .search-input,
+    .filter-select {
+        width: 100%;
+    }
+}

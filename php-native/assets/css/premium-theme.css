@@ -1,0 +1,508 @@
+/**
+ * RestoQwen POS - Premium Black & Gold Theme
+ * Global styles untuk semua halaman
+ */
+
+:root {
+    --gold-primary: #D4AF37;
+    --gold-light: #F4DF89;
+    --gold-dark: #AA8C2C;
+    --gold-gradient: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+    --black-primary: #0a0a0a;
+    --black-secondary: #1a1a1a;
+    --black-tertiary: #2a2a2a;
+    --black-gradient: linear-gradient(135deg, var(--black-primary) 0%, var(--black-secondary) 100%);
+    --charcoal: #1f1f1f;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background: var(--black-gradient);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* =====================
+   Sidebar Styles
+   ===================== */
+
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--black-tertiary) 0%, var(--black-primary) 100%);
+    border-right: 2px solid var(--gold-dark);
+    box-shadow: 5px 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.sidebar-brand {
+    padding: 25px 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.7);
+    padding: 14px 20px;
+    margin: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--gold-gradient);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold-light);
+    padding-left: 25px;
+}
+
+.sidebar .nav-link:hover::before {
+    transform: scaleY(1);
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+    color: var(--gold-primary);
+    border-left: 3px solid var(--gold-primary);
+}
+
+.sidebar .nav-link i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.logout-btn {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    border-radius: 8px;
+    margin: 6px 12px;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+/* =====================
+   Main Content Styles
+   ===================== */
+
+.main-content {
+    padding: 30px;
+}
+
+/* =====================
+   Header Cards
+   ===================== */
+
+.pos-header,
+.page-header {
+    background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.pos-header h2,
+.page-header h2 {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* =====================
+   Stats Cards
+   ===================== */
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.stat-box:hover::before {
+    left: 100%;
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =====================
+   Content Cards
+   ===================== */
+
+.content-card,
+.table-layout-container {
+    background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* =====================
+   Tables
+   ===================== */
+
+.table {
+    color: #fff;
+}
+
+.table thead th {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--gold-light);
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+}
+
+.table tbody td {
+    background: rgba(255,255,255,0.02);
+    border-color: rgba(212, 175, 55, 0.1);
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+/* =====================
+   Buttons
+   ===================== */
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold-gradient);
+    border: none;
+    color: var(--black-primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #34ce57 100%);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #ff6b6b 100%);
+    border: none;
+}
+
+.btn-warning {
+    background: var(--gold-gradient);
+    border: none;
+    color: var(--black-primary);
+}
+
+.btn-outline-primary {
+    color: var(--gold-primary);
+    border-color: var(--gold-primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--gold-primary);
+    color: var(--black-primary);
+}
+
+/* =====================
+   Forms
+   ===================== */
+
+.form-control,
+.form-select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.form-label {
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* =====================
+   Badges
+   ===================== */
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* =====================
+   Animations
+   ===================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+/* =====================
+   Scrollbar
+   ===================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-primary);
+}
+
+/* =====================
+   Loading Spinner
+   ===================== */
+
+.spinner-border {
+    color: var(--gold-primary);
+}
+
+/* =====================
+   Alerts
+   ===================== */
+
+.alert {
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.2);
+    border-color: #28a745;
+    color: #34ce57;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.2);
+    border-color: #dc3545;
+    color: #ff6b6b;
+}
+
+.alert-warning {
+    background: rgba(255, 193, 7, 0.2);
+    border-color: #ffc107;
+    color: #ffd93d;
+}
+
+.alert-info {
+    background: rgba(23, 162, 184, 0.2);
+    border-color: #17a2b8;
+    color: #5bc0de;
+}
+
+/* =====================
+   Modal
+   ===================== */
+
+.modal-content {
+    background: var(--black-secondary);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    color: #fff;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, transparent 100%);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* =====================
+   Utility Classes
+   ===================== */
+
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.bg-gold {
+    background: var(--gold-primary) !important;
+}
+
+.border-gold {
+    border: 1px solid var(--gold-primary) !important;
+}
+
+.shadow-gold {
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* =====================
+   Responsive
+   ===================== */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .stats-bar {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+}
